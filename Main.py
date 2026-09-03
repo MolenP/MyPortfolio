@@ -1,7 +1,7 @@
 import telebot
 import requests
 
-bot = telebot.TeleBot("8025440437:AAEOFFytLzFbIvIsFl6yAX6lrHwHarxo814")
+bot = telebot.TeleBot("YOURTELEGRAMBOTTOKEN")
 weather_API = "52a11d2db34547df834164003261906"
 
 def get_weather(city):
