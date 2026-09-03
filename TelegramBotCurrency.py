@@ -1,7 +1,7 @@
 import telebot
 import requests
 
-bot = telebot.TeleBot("8025440437:AAEOFFytLzFbIvIsFl6yAX6lrHwHarxo814")
+bot = telebot.TeleBot("YOURTELEGRAMBOTTOKEN")
 web_API = "6b994177407e54f62dcfd2b1"
 
 def get_exchange_rate(base_currency, target_currency):
