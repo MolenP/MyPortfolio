@@ -5,7 +5,7 @@ import time
 import json
 import datetime
 
-token = "8025440437:AAEOFFytLzFbIvIsFl6yAX6lrHwHarxo814"
+token = "YOURTELEGRAMBOTTOKEN"
 bot = telebot.TeleBot(token)
 
 users = {}
