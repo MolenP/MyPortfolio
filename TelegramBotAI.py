@@ -3,7 +3,7 @@ api_key = "AQ.Ab8RN6JzlB7rI2Ie1W9pRs04jXROR5z7oV4zzM12dHnfEHcJFA"
 import requests
 import telebot
 
-token = "8025440437:AAEOFFytLzFbIvIsFl6yAX6lrHwHarxo814"
+token = "YOURTELEGRAMBOTTOKEN"
 bot = telebot.TeleBot(token)
 
 def get_ai_response(message):
