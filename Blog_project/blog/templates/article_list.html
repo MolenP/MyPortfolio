@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Список статей</title>
+    </head>
+
+    <body>
+        <header>
+            <h1 style="text-align: center;">Список статей</h1>
+            <nav>
+                <a href="{% url 'login' %}">Войти</a>
+                <a href="{% url 'register' %}">Регистрация</a>
+            </nav>
+            {% if user_id != None %}
+                <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit">Выйти из аккаунта</button>
+                </form>
+                
+                <h2>Добро пожаловать, {{user_name}}</h2>
+                <a href="{% url 'create' %}" style="text-align: right;">Создать статью</a>
+            {% endif %}
+        </header>
+
+        <br>
+
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <a href="{% url 'article' article.id %}">{{ article.name }}</a>
+
+                    {% if article.author.id == user_id %}
+                        <a href="{% url 'edit' article.id %}">[Редактировать]</a>
+                        <a href="{% url 'delete' article.id %}">[Удалить]</a>
+                    {% endif %}
+                    <p>{{article.date}}</p>
+                </li>
+            {% empty %}
+                <li>
+                    <p style="color: gray;">На данный момент здесь нет статей</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
