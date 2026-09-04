@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=screen-width, initial-size=1.0">
+        <title>Чат</title>
+    </head>
+    
+    <body>
+        <ul>
+            {% for message in messages %}
+            <li>
+                <strong>{{message.user.name}}</strong>:{{message.text}}
+
+                {% if message.user.id == user.id %}
+                    <a href="{% url 'edit' message.id %}">Редактировать</a>
+                    <a href="{% url 'delete' message.id %}">Удалить</a>
+                {% endif %}
+            </li>
+            {% empty %}
+            <li>
+                На данный момент сообщений нету
+            </li>
+            {% endfor %}
+        </ul>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить</button>
+        </form>
+    </body>
+</html>
