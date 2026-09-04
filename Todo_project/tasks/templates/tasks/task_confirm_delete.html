@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаление задачи</title>
+</head>
+<body>
+    <h1>Вы уверены, что хотите удалить "{{ task.title }}"?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Да, удалить</button>
+        <a href="{% url 'task_list' %}">Отмена</a>
+    </form>
+</body>
+</html>

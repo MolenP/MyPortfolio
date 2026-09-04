@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список задач</title>
+</head>
+<body>
+    <h1>Список задач</h1>
+    <a href="{% url 'task_create' %}"><strong>+ Создать новую задачу</strong></a>
+    <hr>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.title }} — <i>{{ task.complete|yesno:"Выполнено,Не выполнено" }}</i> |
+                <a href="{% url 'task_edit' task.id %}">Редактировать</a> |
+                <a href="{% url 'task_delete' task.id %}">Удалить</a>
+            </li>
+        {% empty %}
+            <li>Задач пока нет.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
