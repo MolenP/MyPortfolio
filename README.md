@@ -1,5 +1,5 @@
 # MyPortfolio
-This is my portfolio. Here is almost all my projects/works on Python and Django
+This is my portfolio. Here is almost all my projects/works on Python and Django(Django's projects is located in directories)
 
 If you want to check my works, then you need to run this commands in your IDLE terminal
 (you need to write your name for file instead of 'NAME'. And choose directory where you will keep all my works)
@@ -10,6 +10,7 @@ If you want to check my works, then you need to run this commands in your IDLE t
 3)pip install django        -- installing django(only with Environment ON)
 
 python PROJECTNAME\manage.py runserver(only with Environment ON)
+Copy URL from terminal response and paste it in your browser URL string
 
 ----------------if you want to create your own projects----------------
 
