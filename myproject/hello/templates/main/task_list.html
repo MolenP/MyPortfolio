@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Список Задач</title>
+    </head>
+
+    <body>
+        <ul>
+            {% for task in list %}
+                <li>
+                    {{ task|capfirst }}
+                </li>
+            {% empty %}
+                <li>
+                    У вас на данный момент нету задач
+                </li>
+            {% endfor %}
+        </ul>
+        
+        <small>
+            Сегодняшняя дата: {% now "d-m-Y H:i" %}
+        </small>
+    </body>
+</html>

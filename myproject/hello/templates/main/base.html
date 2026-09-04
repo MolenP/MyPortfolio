@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/about/">О нас</a>
+        </nav>
+        <hr>
+        {% block body %}{% endblock %}
+        <footer>
+            <p>Все права защищены 2026</p>
+        </footer>
+    </body>
+</html>
